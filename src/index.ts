@@ -31,10 +31,7 @@ app.get("/:filename{.*}", async (c) => {
     `${c.env.END_POINT}/${c.env.BUCKET_NAME}/${filename}`,
     {
       method: "GET",
-      headers: {
-        ...c.res.headers,
-        "host": new URL(c.env.END_POINT).host,
-      },
+      headers: c.res.headers,
     },
   )
 
