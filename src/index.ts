@@ -28,7 +28,7 @@ app.get("/:filename{.*}", async (c) => {
   })
 
   const req = await aws.sign(
-    `https://${c.env.END_POINT}/${c.env.BUCKET_NAME}/${filename}`,
+    `${c.env.END_POINT}/${c.env.BUCKET_NAME}/${filename}`,
     {
       method: "GET",
       headers: {
